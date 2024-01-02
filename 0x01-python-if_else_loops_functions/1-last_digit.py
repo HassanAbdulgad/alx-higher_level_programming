@@ -1,15 +1,22 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-result = number % 10
-if result > 5:
+if number >= 0:
 
-    print("Last digit of", number, "is", result, "and is greater than 5")
+    result = number % 10
+    if result > 5:
 
-elif result == 0:
+        print("Last digit of", number, "is", result, "and is greater than 5")
 
-    print("Last digit of", number, "is", result, "and is 0")
+    elif result == 0:
 
-elif result < 6 and result != 0:
+        print("Last digit of", number, "is", result, "and is 0")
 
-    print("Last digit of", number, "is", result, "and is less than 6 and not 0")
+    elif result < 6 and result != 0:
+
+        messg = "and is less than 6 and not 0"
+        print("Last digit of", number, "is", result, messg)
+else:
+    result2 = (number % 10) - 10
+    messg = "and is less than 6 and not 0"
+    print("Last digit of", number, "is", result2, messg)
