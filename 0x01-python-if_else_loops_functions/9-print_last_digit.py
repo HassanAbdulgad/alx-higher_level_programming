@@ -2,7 +2,8 @@
 def print_last_digit(number):
     if number < 0:
         remainder = number % - (10)
-        print(remainder, end='')
+        print(-(remainder), end='')
     else:
         remainder = number % 10
         print(remainder, end='')
+    return abs(remainder)
