@@ -1,22 +1,15 @@
-import sys
+#!/usr/bin/python3
 
 if __name__ == "__main__":
-    args = sys.argv[1:]
-    num_args = len(args)
+    """Print the number of and list of arguments using sys module."""
+    import sys
 
-    # Print number of arguments
-    if num_args == 0:
-        print("0 argument.", end="")
-    elif num_args == 1:
-        print("1 argument:", end="")
+    size = len(sys.argv) - 1
+    if size == 0:
+        print("0 arguments.")
+    elif size == 1:
+        print("1 argument:")
     else:
-        print("{} arguments:".format(num_args), end="")
-
-    # Print arguments
-    if num_args > 0:
-        print()
-        for i, arg in enumerate(args, start=1):
-            print("{}: {}".format(i, arg))
-    else:
-        print(".")
-
+        print("{} arguments:".format(size))
+    for i in range(size):
+        print("{}: {}".format(i + 1, sys.argv[i + 1]))
